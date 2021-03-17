@@ -1,0 +1,82 @@
+h
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>
+    Attendance Management System
+  </title>
+
+
+<link rel="stylesheet" href="CSS/style-theme.css">
+
+</head><body>
+
+
+
+
+
+<section class="after-loop">
+<div class="container">
+<div class="row">
+
+
+<div class="col-lg-4 col-md-8 mb-5 mb-lg-0 mx-auto">
+<a href="" class="after-loop-item card border-0 card-templates shadow-lg">
+<div class="card-body d-flex align-items-center flex-column text-center">
+<h4>Student Information</h4>
+<p id="Student_One" ></p> 
+</div>
+</a>
+</div>
+
+
+<div class="col-lg-4 col-md-8 mb-5 mb-lg-0 mx-auto">
+<a href="" class="after-loop-item card border-0 card-snippets shadow-lg">
+<div class="card-body d-flex align-items-center flex-column text-center">
+<h4>Student Information</h4>
+<p id="Student_Two" ></p>
+</div>
+</a>
+</div>
+
+
+<div class="col-lg-4 col-md-8 mx-auto">
+<a href="" class="after-loop-item card border-0 card-guides shadow-lg">
+<div class="card-body d-flex align-items-center flex-column text-center">
+ <h4>Student Information</h4>
+<p id="Student_Three" ></p>
+</div>
+</a>
+</div>
+
+</div></div></section>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBOtXFD34NyHXkmzGNulyCljHToRdLxGxE",
+    authDomain: "toilet-sna.firebaseapp.com",
+    databaseURL: "https://toilet-sna.firebaseio.com",
+    projectId: "toilet-sna",
+    storageBucket: "toilet-sna.appspot.com",
+    messagingSenderId: "474416467300"
+  };
+  firebase.initializeApp(config);
+   var Student_One= document.getElementById('Student_One');
+   var dbRef= firebase.database().ref().child('Student_One');
+   dbRef.on('value', snap => Student_One.innerText= snap.val());
+   
+   var Student_Two= document.getElementById('Student_Two');
+   var dbRefi= firebase.database().ref().child('Student_Two');
+   dbRefi.on('value', snap => Student_Two.innerText= snap.val());
+     
+   var Student_Three= document.getElementById('Student_Three');
+   var dbRefi= firebase.database().ref().child('Student_Three');
+   dbRefi.on('value', snap => Student_Three.innerText= snap.val());
+   
+   
+      
+</script>
+
+
+</body></html>
